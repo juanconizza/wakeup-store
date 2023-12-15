@@ -10,7 +10,7 @@ function App() {
     
     <div className="container-fluid">
 
-        <NavBar cantidadItemsCarrito={25}/>
+        <NavBar carrito={15}/>
 
         <Carrousel/>
         

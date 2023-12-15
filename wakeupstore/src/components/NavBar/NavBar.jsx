@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "./NavBar.css";
 import { CartWidget } from "../CartWidget/CartWidget";
 
-export const NavBar = ({cantidadItemsCarrito}) => {
+export const NavBar = ({carrito}) => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container className="ms-auto">
@@ -34,7 +34,7 @@ export const NavBar = ({cantidadItemsCarrito}) => {
             </Nav.Link>
             </Nav>
             </Navbar.Collapse>
-            <Nav.Link className="ms-auto" href="#carrito"> <CartWidget carrito={cantidadItemsCarrito}/> </Nav.Link> 
+            <Nav.Link className="ms-auto" href="#carrito"> <CartWidget carrito={carrito}/> </Nav.Link> 
         </Container>
         
     </Navbar>
