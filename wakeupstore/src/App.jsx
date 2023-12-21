@@ -1,20 +1,23 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NavBar } from "./components/NavBar/NavBar";
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
-import { Carrousel } from "./components/Carrousel/Carrousel";
+import { NavBar } from "./components/NavBar";
+import { ItemListContainer } from "./components/ItemListContainer";
+import { Carrousel } from "./components/Carrousel";
+
 
 
 function App() {
   return (
     
-    <div className="container-fluid">
+    <div className="container-fluid text-center">
 
         <NavBar carrito={15}/>
 
         <Carrousel/>
         
-        <ItemListContainer greetings="Probando Props"/>
+        <ItemListContainer greetings="Bienvenidos a la tienda WakeUp, remeras reales para gente despierta"/>
+        
+       
 
         
 </div>

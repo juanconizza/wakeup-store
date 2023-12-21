@@ -1,0 +1,33 @@
+/* Logo */ 
+
+.logonavbar {
+    width: 300px;
+    height: auto;
+}
+
+/*Titulo lo dejamos por tema SEO pero lo escondemos a los fines estéticos de la tienda*/
+
+.tituloh1{
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: 20px;
+position: absolute;
+  clip: rect(1px, 1px, 1px, 1px); /* Mueve el elemento fuera de la pantalla */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}       
+
+.tituloscard, .cargando {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.preciocard {
+    font-variant: small-caps;
+    font-size: 18px;
+}
+
+
+

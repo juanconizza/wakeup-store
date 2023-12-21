@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "imagen": "./imagenes/Productos/remera-1.png",
+        "titulo": "All you need is Less",
+        "precio": 17.90
+    },
+    {
+        "id": 2,
+        "imagen": "./imagenes/Productos/remera-2.png",
+        "titulo": "Best things in life are NOT THINGS",
+        "precio": 17.90
+    },
+    {
+        "id": 3,
+        "imagen": "./imagenes/Productos/remera-3.png",
+        "titulo": "Go Beyond The Label",
+        "precio": 17.90
+    },
+    {
+        "id": 4,
+        "imagen": "./imagenes/Productos/remera-4.png",
+        "titulo": "It's Within You",
+        "precio": 17.90
+    },
+    {
+        "id": 5,
+        "imagen": "./imagenes/Productos/remera-5.png",
+        "titulo": "Love is the Game",
+        "precio": 17.90
+    },
+    {
+        "id": 6,
+        "imagen": "./imagenes/Productos/remera-6.png",
+        "titulo": "Nothing is Real",
+        "precio": 17.90
+    },
+    {
+        "id": 7,
+        "imagen": "./imagenes/Productos/remera-7.png",
+        "titulo": "Now",
+        "precio": 17.90
+    },
+    {
+        "id": 8,
+        "imagen": "./imagenes/Productos/remera-8.png",
+        "titulo": "This is NOT Black",
+        "precio": 17.90
+    },
+    {
+        "id": 9,
+        "imagen": "./imagenes/Productos/remera-9.png",
+        "titulo": "Unlimited Love",
+        "precio": 17.90
+    },
+    {
+        "id": 10,
+        "imagen": "./imagenes/Productos/remera-10.png",
+        "titulo": "You Are Me",
+        "precio": 17.90
+    },
+    {
+        "id": 11,
+        "imagen": "./imagenes/Productos/remera-11.png",
+        "titulo": "Welcome to the Game",
+        "precio": 17.90
+    },
+    {
+        "id": 12,
+        "imagen": "./imagenes/Productos/remera-12.png",
+        "titulo": "Welcome to the Game, VR set is FREE",
+        "precio": 17.90
+    }
+]

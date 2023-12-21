@@ -1,8 +1,10 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "./NavBar.css";
-import { CartWidget } from "../CartWidget/CartWidget";
+import { CartWidget } from "./CartWidget";
+import logo from '/imagenes/Logo/logo.png';
+
+
 
 export const NavBar = ({carrito}) => {
   return (
@@ -12,8 +14,8 @@ export const NavBar = ({carrito}) => {
           <a href="index.html">
             <img
               className="logonavbar img-fluid"
-              src="./imagenes/Logo/logo.png"
-              alt=""
+              src={logo}
+              alt="logo"
             />
           </a>
         </Navbar.Brand>
