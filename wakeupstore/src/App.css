@@ -29,5 +29,23 @@ position: absolute;
     font-size: 18px;
 }
 
-
+.footer {
+    background-color: black;
+    color: white;
+    padding: 0;
+    
+  }
+  
+  .social-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+    margin-top: 15px;
+    color: white;
+  }
+  
+  .rights {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
 

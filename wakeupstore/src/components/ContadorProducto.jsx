@@ -12,14 +12,16 @@ export const ContadorProducto = () => {
   };
 
   const sumarCantidad = () => {
-    // Puedes agregar una validación aquí para limitar la cantidad máxima
+
+    //ACÁ VA LA VALIDACION DE STOCK A FUTURO //
+
     setCantidad(cantidad + 1);
   };
 
   return (
     <div className="container"> 
       <div className="row justify-content-center">
-        <div className="col-lg-12 mt-3"> {/* Cambia el número según tu preferencia */}
+        <div className="col-lg-12 mt-3"> 
           <div className="input-group">
             <div className="input-group-prepend">
               <button className="btn btn-outline-secondary" onClick={restarCantidad}>-</button>
