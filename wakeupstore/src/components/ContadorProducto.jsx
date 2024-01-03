@@ -21,7 +21,7 @@ export const ContadorProducto = () => {
   return (
     <div className="container"> 
       <div className="row justify-content-center">
-        <div className="col-lg-12 mt-3"> 
+        <div className="col-lg-4 mt-3"> 
           <div className="input-group">
             <div className="input-group-prepend">
               <button className="btn btn-outline-secondary" onClick={restarCantidad}>-</button>

@@ -1,15 +1,18 @@
-import React from 'react'
-import "bootstrap/dist/css/bootstrap.min.css";
-import { ItemDetailContainer } from './ItemDetailContainer';
+import React from 'react';
+import { ItemList } from './ItemList';
 
-export const ItemListContainer = ({greetings}) => {
+export const ItemListContainer = ({ greetings }) => {
+  const handleProductDetails = (productId) => {
+    
+  };
+
   return (
-<div className='container-fluid mt-3'>
+    <div className='container-fluid mt-3'>
+      <h1 className='text-center tituloh1'>{greetings}</h1>
+      <ItemList handleVerDetalle={handleProductDetails} />
+    </div>
+  );
+};
 
-<h1 className='text-center tituloh1'>{greetings}</h1>
 
-<ItemDetailContainer/>
 
-</div>
-  )
-}

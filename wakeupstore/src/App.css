@@ -5,7 +5,7 @@
     height: auto;
 }
 
-/*Titulo lo dejamos por tema SEO pero lo escondemos a los fines estéticos de la tienda*/
+/**** Titulo lo dejamos por tema SEO pero lo escondemos a los fines estéticos de la tienda ****/
 
 .tituloh1{
 
@@ -49,3 +49,7 @@ position: absolute;
   }
   
 
+  .preciocard {
+    font-weight: bold;
+    font-size: 1.8rem;
+  }

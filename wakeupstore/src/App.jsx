@@ -13,7 +13,6 @@ function App() {
         <Carrousel />
 
         <ItemListContainer greetings="Bienvenidos a la tienda WakeUp, remeras reales para gente despierta" />
-        
       </div>
       <Footer/>
     </div>
