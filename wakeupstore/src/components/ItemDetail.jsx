@@ -2,13 +2,15 @@ import { animated, useSpring } from 'react-spring';
 import { ContadorProducto } from './ContadorProducto';
 
 
-export const ItemDetail = ({ producto, isLoading }) => {
-    const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 });
+
+
+export const ItemDetail = ({ producto }) => {
+    
   
     return (
       <div className="container-md">
         <div className="card">
-          <animated.div style={animatedProps} className="row g-0">
+          <div className="row g-0">
             {producto && (
               <>
                 <div className="col-md-4">
@@ -29,7 +31,7 @@ export const ItemDetail = ({ producto, isLoading }) => {
             )}
 
             
-          </animated.div>
+          </div>
         
         </div>
   
