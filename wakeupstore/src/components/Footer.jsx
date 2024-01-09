@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
-import "/src/App.css"; // Archivo CSS para estilos personalizados
+import "/src/App.css"; 
 
 export const Footer = () => {
   return (
@@ -23,7 +23,7 @@ export const Footer = () => {
         <Row className="justify-content-center">
           <Col md={12} className="text-center">
             <p className="rights">
-              WakeUp! - Todos los derechos reservados 2023
+              WakeUp! - Todos los derechos reservados 2024
             </p>
           </Col>
         </Row>

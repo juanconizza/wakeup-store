@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Item } from './Item';
 import { ItemDetailContainer } from './ItemDetailContainer';
-
 import productos from "/src/assets/data.json";
 import { useSpring, animated } from 'react-spring';
 
-export const ItemList = () => {
+const BASE_URL = '/imagenes/Productos'; // Ruta base de las imágenes
+
+export const ItemList = ({ selectedCategory, handleVerDetalle }) => {
   const [productosState, setProductosState] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,15 +26,26 @@ export const ItemList = () => {
 
         setProductosState(selectedProducts);
         setIsLoading(false);
-      }, 1000);
+      }, 2000);
     };
 
     fetchData();
   }, []);
 
+  useEffect(() => {
+    console.log('Selected Category:', selectedCategory); // Agregar este log
+    if (selectedCategory) {
+      const filteredProducts = productos.filter(producto => producto.categoria === selectedCategory);
+      setProductosState(filteredProducts);
+    } else {
+      setProductosState(productos);
+    }
+  }, [selectedCategory]);
+
   const handleProductClick = (productId) => {
     const selected = productosState.find(producto => producto.id === productId);
     setSelectedProduct(selected);
+    handleVerDetalle(productId);
   };
 
   return (
@@ -51,7 +63,13 @@ export const ItemList = () => {
           <animated.div style={animatedProps} className="row">
             {productosState.map((producto) => (
               <div key={producto.id} className="col-md-3 mb-3">
-                <Item producto={producto} handleVerDetalle={handleProductClick} />
+                <Item
+                  producto={{
+                    ...producto,
+                    imagen: `${BASE_URL}/${producto.imagen}` // Utiliza la ruta base
+                  }}
+                  handleVerDetalle={handleProductClick}
+                />
               </div>
             ))}
           </animated.div>
