@@ -15,7 +15,7 @@ function App() {
         <div className="container-fluid text-center">
           <Routes>
             <Route exact path="/" element={<Inicio />} />
-            <Route exact path="/category/:id" element={<ItemListContainer greetings="Bienvenidos a la tienda WakeUp, remeras reales para gente despierta" />} />
+            <Route exact path="/category/:category" element={<ItemListContainer greetings="Bienvenidos a la tienda WakeUp, remeras reales para gente despierta" />} />
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           </Routes>
         </div>

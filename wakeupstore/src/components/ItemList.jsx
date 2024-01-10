@@ -3,10 +3,13 @@ import { Item } from './Item';
 import { ItemDetailContainer } from './ItemDetailContainer';
 import productos from "/src/assets/data.json";
 import { useSpring, animated } from 'react-spring';
+import { useParams } from 'react-router-dom';
 
 const BASE_URL = '/imagenes/Productos'; // Ruta base de las imágenes
 
-export const ItemList = ({ selectedCategory, handleVerDetalle }) => {
+export const ItemList = () => {
+  const { category } = useParams(); //seleccionamos la categoria para en la url. 
+
   const [productosState, setProductosState] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,13 +18,15 @@ export const ItemList = ({ selectedCategory, handleVerDetalle }) => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       setTimeout(() => {
         const productosCopy = [...productos];
-        const selectedProducts = [];
+        let selectedProducts = [];
 
-        while (productosCopy.length > 0) {
-          const randomIndex = Math.floor(Math.random() * productosCopy.length);
-          selectedProducts.push(productosCopy.splice(randomIndex, 1)[0]);
+        if (category) {
+          selectedProducts = productosCopy.filter(producto => producto.categoria === category);
+        } else {
+          selectedProducts = productosCopy;
         }
 
         setProductosState(selectedProducts);
@@ -30,23 +35,17 @@ export const ItemList = ({ selectedCategory, handleVerDetalle }) => {
     };
 
     fetchData();
-  }, []);
+  }, [category]);
 
-  useEffect(() => {
-    console.log('Selected Category:', selectedCategory); // Agregar este log
-    if (selectedCategory) {
-      const filteredProducts = productos.filter(producto => producto.categoria === selectedCategory);
-      setProductosState(filteredProducts);
-    } else {
-      setProductosState(productos);
-    }
-  }, [selectedCategory]);
+  // Función para manejar cuando se hace click en "Ver Detalles" del producto. 
 
   const handleProductClick = (productId) => {
     const selected = productosState.find(producto => producto.id === productId);
     setSelectedProduct(selected);
     handleVerDetalle(productId);
   };
+
+  // Función para manejar cuando se hace click en "Ver Detalles" del producto. 
 
   return (
     <div className="text-center">
