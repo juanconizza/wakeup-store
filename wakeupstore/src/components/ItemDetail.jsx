@@ -1,7 +1,6 @@
-import { animated, useSpring } from 'react-spring';
 import { ContadorProducto } from './ContadorProducto';
 
-
+const BASE_URL = '/imagenes/Productos'; // Ruta base de las imágenes para no generar errores.
 
 
 export const ItemDetail = ({ producto }) => {
@@ -14,7 +13,7 @@ export const ItemDetail = ({ producto }) => {
             {producto && (
               <>
                 <div className="col-md-4">
-                  <img src={producto.imagen} className="card-img-top" alt={producto.titulo} />
+                  <img src={`${BASE_URL}/${producto.imagen}`} className="card-img-top" alt={producto.titulo} />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">

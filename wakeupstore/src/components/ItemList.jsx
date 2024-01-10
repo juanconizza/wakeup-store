@@ -5,16 +5,19 @@ import productos from "/src/assets/data.json";
 import { useSpring, animated } from 'react-spring';
 import { useParams } from 'react-router-dom';
 
-const BASE_URL = '/imagenes/Productos'; // Ruta base de las imágenes
+const BASE_URL = '/imagenes/Productos'; // Ruta base de las imágenes para no generar errores.
 
 export const ItemList = () => {
   const { category } = useParams(); //seleccionamos la categoria para en la url. 
 
-  const [productosState, setProductosState] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [productosState, setProductosState] = useState([]); // variable de estado para mostrar los productos del home y de categorias.
+  const [selectedProduct, setSelectedProduct] = useState(null); // variable de estado para la seleción del producto con "ver detalles"
+  const [isLoading, setIsLoading] = useState(true); //variable de estado para el condicional de la animación simulada de cargando. 
 
-  const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 });
+  const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 }); //Animación de carga las cards. 
+
+
+  // Estado de uso al momento de la carga y para mostrar los productos de la categoria selccionada //
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,16 +39,16 @@ export const ItemList = () => {
 
     fetchData();
   }, [category]);
+   // Estado de uso al momento de la carga y para mostrar los productos de la categoria selccionada //
 
   // Función para manejar cuando se hace click en "Ver Detalles" del producto. 
 
   const handleProductClick = (productId) => {
     const selected = productosState.find(producto => producto.id === productId);
     setSelectedProduct(selected);
-    handleVerDetalle(productId);
-  };
+    };
 
-  // Función para manejar cuando se hace click en "Ver Detalles" del producto. 
+  // Función para manejar cuando se hace click en "Ver Detalles" del producto 
 
   return (
     <div className="text-center">
@@ -67,7 +70,7 @@ export const ItemList = () => {
                     ...producto,
                     imagen: `${BASE_URL}/${producto.imagen}` // Utiliza la ruta base
                   }}
-                  handleVerDetalle={handleProductClick}
+                  handleProductClick={handleProductClick}
                 />
               </div>
             ))}
