@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { useTransition, animated } from 'react-spring';
-import { ItemDetail } from './ItemDetail';
+import React, { useState, useEffect } from "react";
+import { useTransition, animated } from "react-spring";
+import { ItemDetail } from "./ItemDetail";
+import productos from "/src/assets/data.json";
+import { useParams } from "react-router-dom";
 
-export const ItemDetailContainer = ({ producto }) => {
+const BASE_URL = "/imagenes/Productos";
+
+export const ItemDetailContainer = () => {
   const [productoDetalle, setProductoDetalle] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const { productId } = useParams();
 
   useEffect(() => {
-    if (producto) {
-      setIsLoading(true);
-      setTimeout(() => {
-        setProductoDetalle(producto);
-        setIsLoading(false);
-      }, 2000);
-    }
-  }, [producto]);
+    setTimeout(() => {
+      const encontrarProducto = productos.find(
+        (product) => product.id === parseInt(productId)
+      );
+      setProductoDetalle(encontrarProducto);
+      setIsLoading(false);
+    }, 2000);
+  }, [productId]);
 
   const transitions = useTransition(isLoading, {
     from: { opacity: 0 },
@@ -24,28 +29,22 @@ export const ItemDetailContainer = ({ producto }) => {
 
   return (
     <div className="container">
-      {transitions((style, itemLoading) => (
+      {transitions((style, itemLoading) =>
         itemLoading ? (
           <animated.div style={style}>
             <div className="loading-spinner">
-              <div className="spinner-border mb-3" role="status">
+              <div className="spinner-border mb-3 mt-3" role="status">
                 <span className="visually-hidden">Cargando...</span>
               </div>
               <p className="cargando">Cargando Detalles...</p>
             </div>
           </animated.div>
         ) : (
-          <animated.div style={style}>
+          <animated.div style={style} mt-3>
             {productoDetalle && <ItemDetail producto={productoDetalle} />}
           </animated.div>
         )
-      ))}
+      )}
     </div>
   );
 };
-
-  
-
-
-
-
