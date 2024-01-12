@@ -40,7 +40,7 @@ export const ItemDetailContainer = () => {
             </div>
           </animated.div>
         ) : (
-          <animated.div style={style} mt-3>
+          <animated.div style={style}>
             {productoDetalle && <ItemDetail producto={productoDetalle} />}
           </animated.div>
         )

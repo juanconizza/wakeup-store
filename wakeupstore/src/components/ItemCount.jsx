@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export const ContadorProducto = () => {
+export const ItemCount = ({ producto, onCantidadChange }) => {
+  //Creamos un estado para determinar la cantidad selecionada con logica conectada al stock disponible. //
   const [cantidad, setCantidad] = useState(1);
 
   const restarCantidad = () => {
@@ -11,10 +12,18 @@ export const ContadorProducto = () => {
   };
 
   const sumarCantidad = () => {
-    //ACÁ VA LA VALIDACION DE STOCK A FUTURO //
-
-    setCantidad(cantidad + 1);
+    if (cantidad < producto.stock) {
+      setCantidad(cantidad + 1);
+    }
   };
+
+  // Función para setear la cantidad seleccionada del Item 
+
+  const agregarAlCarrito = () => {
+    onCantidadChange(cantidad);
+  };
+
+  
 
   return (
     <div className="container">
@@ -45,7 +54,10 @@ export const ContadorProducto = () => {
             </div>
           </div>
           <div className="agregar-carrito mt-3">
-            <button className="btn btn-block btn-dark text-white rounded-pill">
+            <button
+              className="btn btn-block btn-dark text-white rounded-pill"
+              onClick={agregarAlCarrito}
+            >
               Agregar al Carrito
             </button>
           </div>

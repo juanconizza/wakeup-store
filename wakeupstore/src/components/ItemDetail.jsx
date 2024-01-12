@@ -1,8 +1,24 @@
-import { ContadorProducto } from "./ContadorProducto";
+import { ItemCount } from "./ItemCount";
+import { useState, useEffect } from "react";
 
 const BASE_URL = "/imagenes/Productos"; // Ruta base de las imágenes para no generar errores.
 
 export const ItemDetail = ({ producto }) => {
+  // Estado para almacenar la cantidad seleccionada del ItemCount
+  const [cantidadSeleccionada, setCantidadSeleccionada] = useState(1);
+
+  // Función para manejar la cantidad seleccionada
+  const handleCantidadSeleccionada = (cantidad) => {
+    
+    setCantidadSeleccionada(cantidad);
+    console.log(cantidadSeleccionada);// muestra la cantidad seleccioanda
+     
+  };
+
+  useEffect(() => {
+    handleCantidadSeleccionada(cantidadSeleccionada);
+  }, [cantidadSeleccionada]);
+
   return (
     <div className="container-md">
       <div className="card">
@@ -28,7 +44,11 @@ export const ItemDetail = ({ producto }) => {
                     </span>
                   </p>
                   <p className="mb-0">Cantidad:</p>
-                  <ContadorProducto />
+                  <ItemCount
+                    producto={producto}
+                    onCantidadChange={handleCantidadSeleccionada}
+                  />
+                  <p className="mt-4"> Stock Disponible: {producto.stock} </p>
                 </div>
               </div>
             </>

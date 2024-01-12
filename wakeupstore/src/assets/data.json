@@ -5,6 +5,7 @@
         "titulo": "All you need is Less",
         "precio": 17.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -13,6 +14,7 @@
         "titulo": "Best things in life are NOT THINGS",
         "precio": 27.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -21,6 +23,7 @@
         "titulo": "Go Beyond The Label",
         "precio": 23.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -29,6 +32,7 @@
         "titulo": "It's Within You",
         "precio": 17.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -37,6 +41,7 @@
         "titulo": "Love is the Game",
         "precio": 19.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -45,6 +50,7 @@
         "titulo": "Nothing is Real",
         "precio": 24.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -53,6 +59,7 @@
         "titulo": "Now",
         "precio": 17.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -61,6 +68,7 @@
         "titulo": "This is NOT Black",
         "precio": 17.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -69,6 +77,7 @@
         "titulo": "Unlimited Love",
         "precio": 15.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -77,6 +86,7 @@
         "titulo": "You Are Me",
         "precio": 18.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -85,6 +95,7 @@
         "titulo": "Welcome to the Game",
         "precio": 17.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -93,6 +104,7 @@
         "titulo": "Welcome to the Game, VR set is FREE",
         "precio": 25.90,
         "categoria": "remeras",
+        "stock": 8,
         "descripcion": "Esta remera de algodón es la prenda perfecta para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -101,6 +113,7 @@
         "titulo": "Welcome to the Game, VR set is FREE",
         "precio": 17.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     }
     ,
@@ -110,6 +123,7 @@
         "titulo": "Welcome to the Game",
         "precio": 29.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -118,6 +132,7 @@
         "titulo": "You Are Me",
         "precio": 19.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -126,6 +141,7 @@
         "titulo": "This is NOT Black",
         "precio": 24.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -134,6 +150,7 @@
         "titulo": "Love is the Game",
         "precio": 16.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     },
     {
@@ -142,6 +159,7 @@
         "titulo": "All you need is Less",
         "precio": 27.90,
         "categoria": "gorras",
+        "stock": 8,
         "descripcion": "Esta gorra es el accesoro perfecto para lucir tu estilo con comodidad y elegancia. Está fabricada con materiales de alta calidad, lo que garantiza su durabilidad y suavidad. El estampado es de excelente calidad, con colores vivos y detalles precisos."
     }
 ]
