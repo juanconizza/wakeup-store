@@ -5,6 +5,7 @@ export const ItemCount = ({ producto, onCantidadChange }) => {
   //Creamos un estado para determinar la cantidad selecionada con logica conectada al stock disponible. //
   const [cantidad, setCantidad] = useState(1);
 
+
   const restarCantidad = () => {
     if (cantidad > 1) {
       setCantidad(cantidad - 1);
@@ -17,9 +18,13 @@ export const ItemCount = ({ producto, onCantidadChange }) => {
     }
   };
 
-  // Función para setear la cantidad seleccionada del Item 
+  // Función para setear la cantidad seleccionada del Item si el stock es cero no funciona el botón //
 
   const agregarAlCarrito = () => {
+    if (producto.stock === 0) {
+      return;
+    }else
+
     onCantidadChange(cantidad);
   };
 

@@ -1,23 +1,25 @@
+import React, { useContext, useState } from "react";
+import { CartContext } from "../context/CartContext";
 import { ItemCount } from "./ItemCount";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const BASE_URL = "/imagenes/Productos"; // Ruta base de las imágenes para no generar errores.
+const BASE_URL = "/imagenes/Productos";
 
 export const ItemDetail = ({ producto }) => {
-  // Estado para almacenar la cantidad seleccionada del ItemCount
-  const [cantidadSeleccionada, setCantidadSeleccionada] = useState(1);
+  const [showNotification, setShowNotification] = useState(false);
+  const { handleCantidadSeleccionada } = useContext(CartContext);
 
-  // Función para manejar la cantidad seleccionada
-  const handleCantidadSeleccionada = (cantidad) => {
-    
-    setCantidadSeleccionada(cantidad);
-    console.log(cantidadSeleccionada);// muestra la cantidad seleccioanda
-     
+  const onCantidadChange = (cantidad) => {
+    handleCantidadSeleccionada(producto, cantidad);
+
+    // Mostrar la notificación de agregado.
+    setShowNotification(true);
+
+    // Ocultar notificación después de 3 segundos
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
   };
-
-  useEffect(() => {
-    handleCantidadSeleccionada(cantidadSeleccionada);
-  }, [cantidadSeleccionada]);
 
   return (
     <div className="container-md">
@@ -44,10 +46,12 @@ export const ItemDetail = ({ producto }) => {
                     </span>
                   </p>
                   <p className="mb-0">Cantidad:</p>
-                  <ItemCount
-                    producto={producto}
-                    onCantidadChange={handleCantidadSeleccionada}
-                  />
+                  <ItemCount producto={producto} onCantidadChange={onCantidadChange} />
+                  {showNotification && (
+                    <div className="notification">
+                      ¡Producto agregado al Carrito! &#128512;
+                    </div>
+                  )}
                   <p className="mt-4"> Stock Disponible: {producto.stock} </p>
                 </div>
               </div>
@@ -57,9 +61,9 @@ export const ItemDetail = ({ producto }) => {
       </div>
 
       <div className="text-center mt-3 mb-3">
-        <button className="btn btn-block btn-dark text-white rounded-pill">
+      <Link to="/" className="btn btn-block btn-dark text-white rounded-pill">
           Volver
-        </button>
+        </Link>
       </div>
     </div>
   );

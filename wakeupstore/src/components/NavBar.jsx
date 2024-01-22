@@ -43,7 +43,7 @@ export const NavBar = ({ carrito }) => {
             </Link>
           </Nav>
         </Navbar.Collapse>
-        <Nav.Link className="ms-auto" href="#carrito">
+        <Nav.Link className="ms-auto" as={Link} to="/carrito">
           <CartWidget carrito={carrito} />
         </Nav.Link>
       </Container>

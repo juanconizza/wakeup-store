@@ -24,6 +24,12 @@ position: absolute;
     font-weight: bold;
 }
 
+.titulo {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .preciocard {
     font-variant: small-caps;
     font-size: 18px;
@@ -53,3 +59,16 @@ position: absolute;
     font-weight: bold;
     font-size: 1.8rem;
   }
+
+  .notification {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+  }
+  

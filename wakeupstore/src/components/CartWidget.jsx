@@ -1,10 +1,16 @@
-import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
-export const CartWidget = ({ carrito }) => {
+export const CartWidget = () => {
+
+const {totalItemsCart} = useContext(CartContext)
+
+
+
   return (
     <div>
-      <FaShoppingCart size={25} /> <span>({carrito})</span>
+      <FaShoppingCart size={25} /> <span>({totalItemsCart()})</span>
     </div>
   );
 };
