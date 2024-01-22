@@ -36,8 +36,20 @@ export const CartContextProvider = ({ children }) => {
     return total;
   }
 
+  // Función para calcular el total de la compra del carrito
+  const calcularTotal = () => {
+    return carrito.reduce((total, producto) => {
+      return total + producto.cantidad * producto.precio;
+    }, 0);
+  };
+// Función para Elminar el Item del Carrito
+  const eliminarItemCarrito = (id) => {
+    const nuevoCarrito = carrito.filter((producto) => producto.id !== id);
+    setCarrito(nuevoCarrito);
+  }
+
   return (
-    <CartContext.Provider value={{ carrito, setCarrito, handleCantidadSeleccionada, vaciarCarrito, totalItemsCart }}>
+    <CartContext.Provider value={{ carrito, setCarrito, handleCantidadSeleccionada, vaciarCarrito, totalItemsCart, calcularTotal, eliminarItemCarrito }}>
       {children}
     </CartContext.Provider>
   );
