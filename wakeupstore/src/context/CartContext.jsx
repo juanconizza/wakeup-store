@@ -1,12 +1,18 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-
+    
   const [carrito, setCarrito] = useState([]);
 
-  console.log(carrito);
+  // Cargar el carrito desde el localStorage al montar el componente
+  useEffect(() => {
+    const carritoGuardado = localStorage.getItem("carrito");
+    if (carritoGuardado) {
+      setCarrito(JSON.parse(carritoGuardado));
+    }
+  }, []);
 
   // Función para agregar o actualizar la cantidad de un producto en el carrito
   const handleCantidadSeleccionada = (producto, cantidad) => {
@@ -34,7 +40,7 @@ export const CartContextProvider = ({ children }) => {
   const totalItemsCart = () => {
     const total = carrito.reduce((accum, item) => accum + item.cantidad, 0);
     return total;
-  }
+  };
 
   // Función para calcular el total de la compra del carrito
   const calcularTotal = () => {
@@ -42,15 +48,24 @@ export const CartContextProvider = ({ children }) => {
       return total + producto.cantidad * producto.precio;
     }, 0);
   };
-// Función para Elminar el Item del Carrito
+
+  // Función para Eliminar el Item del Carrito
   const eliminarItemCarrito = (id) => {
     const nuevoCarrito = carrito.filter((producto) => producto.id !== id);
     setCarrito(nuevoCarrito);
-  }
+  };
+
+  // Guardar el carrito en el localStorage cada vez que cambie
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }, [carrito]);
 
   return (
-    <CartContext.Provider value={{ carrito, setCarrito, handleCantidadSeleccionada, vaciarCarrito, totalItemsCart, calcularTotal, eliminarItemCarrito }}>
+    <CartContext.Provider
+      value={{ carrito, setCarrito, handleCantidadSeleccionada, vaciarCarrito, totalItemsCart, calcularTotal, eliminarItemCarrito }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
+
