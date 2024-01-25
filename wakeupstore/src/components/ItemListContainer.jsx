@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { ItemList } from "./ItemList";
 
 export const ItemListContainer = ({ greetings }) => {

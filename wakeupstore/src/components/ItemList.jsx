@@ -1,47 +1,48 @@
 import React, { useState, useEffect } from "react";
 import { Item } from "./Item";
-import { ItemDetailContainer } from "./ItemDetailContainer";
-import productos from "/src/assets/data.json";
 import { useSpring, animated } from "react-spring";
 import { useParams } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 
-const BASE_URL = "/imagenes/Productos"; // Ruta base de las imágenes para no generar errores.
+const BASE_URL = "/imagenes/Productos";
 
 export const ItemList = () => {
-  const { category } = useParams(); //seleccionamos la categoria para en la url.
+  const { category } = useParams();
 
-  const [productosState, setProductosState] = useState([]); // variable de estado para mostrar los productos del home
-  const [selectedProduct, setSelectedProduct] = useState(null); // variable de estado para la seleción del producto por categorias
-  const [isLoading, setIsLoading] = useState(true); //variable de estado para el condicional de la animación simulada de cargando.
+  const [productosState, setProductosState] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 }); //Animación de carga las cards.
+  const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 });
 
-  // Estado de uso al momento de la carga y para mostrar los productos de la categoria selccionada //
-
+  // Llamado a la base de datos de Firebase //
+  
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      setTimeout(() => {
-        const productosCopy = [...productos];
-        let selectedProducts = [];
 
-        if (category) {
-          selectedProducts = productosCopy.filter(
-            (producto) => producto.categoria === category
-          );
-        } else {
-          selectedProducts = productosCopy;
-        }
+      try {
+        const productosCopy = collection(db, "productos");
+        const resp = await getDocs(productosCopy);
+
+        const selectedProducts = category
+          ? resp.docs
+              .filter((doc) => doc.data().categoria === category)
+              .map((doc) => ({ id: doc.id, ...doc.data() }))
+          : resp.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 
         setProductosState(selectedProducts);
-        setIsLoading(false);
-      }, 2000);
+      } catch (error) {
+        console.error("Error al recuperar datos de Firebase", error);
+      } finally {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000); 
+      }
     };
 
     fetchData();
   }, [category]);
-
-  // Estado de uso al momento de la carga y para mostrar los productos de la categoria selccionada //
 
   return (
     <div className="text-center">
@@ -57,7 +58,7 @@ export const ItemList = () => {
             <p className="cargando">Cargando...</p>
           </div>
         )}
-        {!isLoading && !selectedProduct && (
+        {!isLoading && (
           <animated.div style={animatedProps} className="row">
             {productosState.map((producto) => (
               <div key={producto.id} className="col-md-3 mb-3">
@@ -71,7 +72,6 @@ export const ItemList = () => {
             ))}
           </animated.div>
         )}
-        {selectedProduct && <ItemDetailContainer producto={selectedProduct} />}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated } from "react-spring";
 import { ItemDetail } from "./ItemDetail";
-import productos from "/src/assets/data.json";
 import { useParams } from "react-router-dom";
+import {doc, getDoc} from "firebase/firestore"
+import { db } from "../firebase/config";
 
 const BASE_URL = "/imagenes/Productos";
 
@@ -11,12 +12,16 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { productId } = useParams();
 
+  //Traemos el producto seleccionado de Firebase
   useEffect(() => {
+
     setTimeout(() => {
-      const encontrarProducto = productos.find(
-        (product) => product.id === parseInt(productId)
-      );
-      setProductoDetalle(encontrarProducto);
+      const docRef = doc(db, "productos", productId)
+      getDoc(docRef)
+        .then ((resp) => {
+          setProductoDetalle( {id: resp.id, ...resp.data()})
+        })
+      
       setIsLoading(false);
     }, 2000);
   }, [productId]);
