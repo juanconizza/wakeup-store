@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Item } from "./Item";
 import { useSpring, animated } from "react-spring";
 import { useParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const BASE_URL = "/imagenes/Productos";
@@ -11,33 +11,42 @@ export const ItemList = () => {
   const { category } = useParams();
 
   const [productosState, setProductosState] = useState([]);
+  
   const [isLoading, setIsLoading] = useState(true);
 
   const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 });
 
   // Llamado a la base de datos de Firebase //
-  
+
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
 
       try {
         const productosCopy = collection(db, "productos");
-        const resp = await getDocs(productosCopy);
 
-        const selectedProducts = category
-          ? resp.docs
-              .filter((doc) => doc.data().categoria === category)
-              .map((doc) => ({ id: doc.id, ...doc.data() }))
-          : resp.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        // Utilizamos query y where para filtrar por categoría si está presente y solo traer de la base lo seleccionado.
+
+        const q = category
+          ? query(productosCopy, where("categoria", "==", category))
+          : productosCopy;
+
+        const resp = await getDocs(q);
+        console.log(resp);
+
+        const selectedProducts = resp.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
 
         setProductosState(selectedProducts);
+
       } catch (error) {
         console.error("Error al recuperar datos de Firebase", error);
       } finally {
         setTimeout(() => {
           setIsLoading(false);
-        }, 2000); 
+        }, 2000);
       }
     };
 
