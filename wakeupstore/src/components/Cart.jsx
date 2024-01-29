@@ -72,9 +72,9 @@ export const Cart = () => {
               >
                 Vaciar Carrito
               </Button>
-              <Button className="mt-5 btn btn-block btn-success text-white rounded-pill">
-                Finalizar Compra
-              </Button>
+              <Link to="/checkout" className="mt-5 btn btn-block btn-success text-white rounded-pill">
+          Finalizar Compra
+        </Link>
             </div>
           </Col>
         </Row>

@@ -10,7 +10,7 @@ const {totalItemsCart} = useContext(CartContext)
 
   return (
     <div>
-      <FaShoppingCart size={25} /> <span>({totalItemsCart()})</span>
+      <FaShoppingCart size={25} /> <span>{totalItemsCart() != 0 && <span>({totalItemsCart()})</span>}</span>
     </div>
   );
 };

@@ -32,7 +32,6 @@ export const ItemList = () => {
           : productosCopy;
 
         const resp = await getDocs(q);
-        console.log(resp);
 
         const selectedProducts = resp.docs.map((doc) => ({
           id: doc.id,
