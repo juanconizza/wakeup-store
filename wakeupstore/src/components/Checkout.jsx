@@ -2,14 +2,16 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { useForm, Controller } from "react-hook-form";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase/config";
 import listaProvincias from "../helpers/listaProvincias";
+import gracias from "/imagenes/gracias.webp"
 
 export const Checkout = () => {
   const { vaciarCarrito, carrito, calcularTotal } = useContext(CartContext);
 
 const [pedidoId, setpedidoId] = useState("")
+const [nombreCliente, setnombreCliente] = useState("")
 
   //Llamamos a useForms
   const {
@@ -22,6 +24,7 @@ const [pedidoId, setpedidoId] = useState("")
   // Manejamos la data del submit y le sumamos los productos y el total del carrito.
   const onSubmit = (data) => {
     const pedido = {
+      fechaDeCompra: serverTimestamp(),
       cliente: data,
       productos: carrito,
       total: calcularTotal(),
@@ -31,10 +34,11 @@ const [pedidoId, setpedidoId] = useState("")
     addDoc(pedidoRef, pedido)
         .then ((doc) => {
             setpedidoId(doc.id)
-            
+            setnombreCliente(data.firstName)
         })
-    console.log("Pedido Enviado con Exito!");
-    
+
+    //vaciamos el carrito luego del pedido. 
+    vaciarCarrito();
 
   };
 
@@ -43,10 +47,12 @@ const [pedidoId, setpedidoId] = useState("")
   if (pedidoId) {
     return (
         <div className="container vh-100 mt-5">
-            <h2>¡Gracias por Tu Compra !</h2>
-            <h3 className="mt-2">Tu Número de pedido es: {pedidoId}</h3>
+            <img className="graciasManito mb-4" src={gracias} alt="gracias por la compra" />
+            <h2>¡Gracias por Tu Compra {nombreCliente}!</h2>
+            <h4 className="mt-2">Tu Número de pedido es: {pedidoId}</h4>
         </div>
     )
+    
   }
 
   return (
