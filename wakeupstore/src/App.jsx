@@ -1,14 +1,14 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NavBar } from "./components/NavBar";
-import { ItemListContainer } from "./components/ItemListContainer";
-import { Carrousel } from "./components/Carrousel";
-import { Footer } from "./components/Footer";
+import { NavBar } from "./components/NavBar/NavBar";
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { Carrousel } from "./components/Carrousel/Carrousel";
+import { Footer } from "./components/Footer/Footer";
 import { BrowserRouter, Routes, Route, Outlet} from "react-router-dom";
-import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartContextProvider } from "./context/CartContext";
-import { Cart } from "./components/Cart";
-import { Checkout } from "./components/CheckOut";
+import { Cart } from "./components/Cart/Cart";
+import { Checkout } from "./components/Checkout/Checkout";
 
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
             <Route exact path="/item/:productId" element={<ItemDetailContainer />} />
             <Route exact path="/carrito" element={<Cart />} />
             <Route exact path="/checkout" element={<Checkout />} />
-
           </Routes>
         </div>
         <Footer />

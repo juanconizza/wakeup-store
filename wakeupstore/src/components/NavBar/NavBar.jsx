@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { CartWidget } from "./CartWidget";
+import { CartWidget } from "../CartWidget/CartWidget";
 import logo from "/imagenes/Logo/logo.png";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";

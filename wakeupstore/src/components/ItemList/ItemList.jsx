@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Item } from "./Item";
+import { Item } from "../Item/Item";
 import { useSpring, animated } from "react-spring";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
-import { db } from "../firebase/config";
+import { db } from "../../firebase/config";
 
 const BASE_URL = "/imagenes/Productos";
 

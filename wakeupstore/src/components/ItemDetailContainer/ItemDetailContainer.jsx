@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTransition, animated } from "react-spring";
-import { ItemDetail } from "./ItemDetail";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore"
-import { db } from "../firebase/config";
+import { db } from "../../firebase/config";
 
 const BASE_URL = "/imagenes/Productos";
 

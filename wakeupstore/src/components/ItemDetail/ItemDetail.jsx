@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
-import { ItemCount } from "./ItemCount";
+import { CartContext } from "../../context/CartContext";
+import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 
 const BASE_URL = "/imagenes/Productos";

@@ -1,6 +1,6 @@
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 
 export const Cart = () => {
