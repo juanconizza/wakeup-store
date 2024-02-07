@@ -3,9 +3,14 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import listaProvincias from "../../helpers/listaProvincias";
 import { Controller } from "react-hook-form";
 
-const FormularioCheckout = ({ onSubmit, handleSubmit, register, control, errors, emailValue }) => {
-
-
+const FormularioCheckout = ({
+  onSubmit,
+  handleSubmit,
+  register,
+  control,
+  errors,
+  emailValue,
+}) => {
   return (
     <Form onSubmit={handleSubmit(onSubmit)} className="container">
       <h2>Ya casi terminás tu compra!</h2>

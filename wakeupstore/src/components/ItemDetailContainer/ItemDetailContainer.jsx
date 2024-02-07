@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
+
 import { useTransition, animated } from "react-spring";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import {doc, getDoc} from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const BASE_URL = "/imagenes/Productos";
@@ -14,18 +15,25 @@ export const ItemDetailContainer = () => {
 
   //Traemos el producto seleccionado de Firebase
   useEffect(() => {
+    const fetchProducto = async () => {
+      try {
+        setIsLoading(true);
+        const docRef = doc(db, 'productos', productId);
+        const resp = await getDoc(docRef);
+        if (resp.exists()) {
+          setProductoDetalle({ id: resp.id, ...resp.data() });
+        } else {
+          console.log('El producto no existe');
+        }
+      } catch (error) {
+        console.error('Error al obtener el producto:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    setTimeout(() => {
-      const docRef = doc(db, "productos", productId)
-      getDoc(docRef)
-        .then ((resp) => {
-          setProductoDetalle( {id: resp.id, ...resp.data()})
-        })
-      
-      setIsLoading(false);
-    }, 2000);
+    fetchProducto();
   }, [productId]);
-
   const transitions = useTransition(isLoading, {
     from: { opacity: 0 },
     enter: { opacity: 1 },

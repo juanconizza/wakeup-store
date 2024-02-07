@@ -3,14 +3,12 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 export const CartWidget = () => {
-
-const {totalItemsCart} = useContext(CartContext)
-
-
+  const { totalItemsCart } = useContext(CartContext);
 
   return (
     <div>
-      <FaShoppingCart size={25} /> <span>{totalItemsCart() != 0 && <span>({totalItemsCart()})</span>}</span>
+      <FaShoppingCart size={25} />{" "}
+      <span>{totalItemsCart() != 0 && <span>({totalItemsCart()})</span>}</span>
     </div>
   );
 };

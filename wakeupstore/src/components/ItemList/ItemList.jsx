@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import { Item } from "../Item/Item";
 import { useSpring, animated } from "react-spring";
 import { useParams } from "react-router-dom";
@@ -11,7 +12,7 @@ export const ItemList = () => {
   const { category } = useParams();
 
   const [productosState, setProductosState] = useState([]);
-  
+
   const [isLoading, setIsLoading] = useState(true);
 
   const animatedProps = useSpring({ opacity: isLoading ? 0 : 1 });
@@ -23,12 +24,11 @@ export const ItemList = () => {
       setIsLoading(true);
 
       try {
-        const productosCopy = collection(db, "productos");
+        const productosCopy = collection(db, 'productos');
 
         // Utilizamos query y where para filtrar por categoría si está presente y solo traer de la base lo seleccionado.
-
         const q = category
-          ? query(productosCopy, where("categoria", "==", category))
+          ? query(productosCopy, where('categoria', '==', category))
           : productosCopy;
 
         const resp = await getDocs(q);
@@ -39,13 +39,10 @@ export const ItemList = () => {
         }));
 
         setProductosState(selectedProducts);
-
       } catch (error) {
-        console.error("Error al recuperar datos de Firebase", error);
+        console.error('Error al recuperar datos de Firebase', error);
       } finally {
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 2000);
+        setIsLoading(false);
       }
     };
 

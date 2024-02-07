@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import "/src/App.css";
@@ -28,7 +27,6 @@ export const Footer = () => {
           </Col>
         </Row>
       </Container>
-      
     </footer>
   );
 };

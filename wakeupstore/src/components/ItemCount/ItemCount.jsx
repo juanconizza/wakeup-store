@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState } from "react";
 
 export const ItemCount = ({ producto, onCantidadChange }) => {
   //Creamos un estado para determinar la cantidad selecionada con logica conectada al stock disponible. //
   const [cantidad, setCantidad] = useState(1);
-
 
   const restarCantidad = () => {
     if (cantidad > 1) {
@@ -23,12 +21,8 @@ export const ItemCount = ({ producto, onCantidadChange }) => {
   const agregarAlCarrito = () => {
     if (producto.stock === 0) {
       return;
-    }else
-
-    onCantidadChange(cantidad);
+    } else onCantidadChange(cantidad);
   };
-
-  
 
   return (
     <div className="container">

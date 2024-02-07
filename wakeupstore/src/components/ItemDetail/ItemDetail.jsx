@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+
 import { CartContext } from "../../context/CartContext";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
@@ -46,7 +47,10 @@ export const ItemDetail = ({ producto }) => {
                     </span>
                   </p>
                   <p className="mb-0">Cantidad:</p>
-                  <ItemCount producto={producto} onCantidadChange={onCantidadChange} />
+                  <ItemCount
+                    producto={producto}
+                    onCantidadChange={onCantidadChange}
+                  />
                   {showNotification && (
                     <div className="notification">
                       ¡Producto agregado al Carrito! &#128512;
@@ -61,7 +65,7 @@ export const ItemDetail = ({ producto }) => {
       </div>
 
       <div className="text-center mt-3 mb-3">
-      <Link to="/" className="btn btn-block btn-dark text-white rounded-pill">
+        <Link to="/" className="btn btn-block btn-dark text-white rounded-pill">
           Volver
         </Link>
       </div>

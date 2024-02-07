@@ -3,7 +3,6 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
-    
   const [carrito, setCarrito] = useState([]);
 
   // Cargar el carrito desde el localStorage al montar el componente
@@ -22,7 +21,9 @@ export const CartContextProvider = ({ children }) => {
       // Actualizar la cantidad si el producto ya está en el carrito
       setCarrito((prevCarrito) =>
         prevCarrito.map((item) =>
-          item.id === producto.id ? { ...item, cantidad: item.cantidad + cantidad } : item
+          item.id === producto.id
+            ? { ...item, cantidad: item.cantidad + cantidad }
+            : item
         )
       );
     } else {
@@ -62,10 +63,17 @@ export const CartContextProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ carrito, setCarrito, handleCantidadSeleccionada, vaciarCarrito, totalItemsCart, calcularTotal, eliminarItemCarrito }}
+      value={{
+        carrito,
+        setCarrito,
+        handleCantidadSeleccionada,
+        vaciarCarrito,
+        totalItemsCart,
+        calcularTotal,
+        eliminarItemCarrito,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
 };
-
