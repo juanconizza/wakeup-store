@@ -14,12 +14,19 @@ const [pedidoId, setpedidoId] = useState("")
 const [nombreCliente, setnombreCliente] = useState("")
 
   //Llamamos a useForms
+
   const {
     handleSubmit,
     register,
     control,
-    formState: { errors },
+    formState,
+    watch,
   } = useForm();
+
+
+  // Verificamos que los email coincidan con la función watch
+  const emailValue = watch("email");
+  
 
   // Manejamos la data del submit y le sumamos los productos y el total del carrito.
   const onSubmit = (data) => {
@@ -57,8 +64,8 @@ const [nombreCliente, setnombreCliente] = useState("")
 
   return (
     <div>
-      
-      <FormularioCheckout onSubmit={onSubmit} handleSubmit={handleSubmit} register={register} control={control} errors={{ errors }} />
+
+      <FormularioCheckout onSubmit={onSubmit} handleSubmit={handleSubmit} register={register} control={control} errors={formState.errors} watch={watch} emailValue={emailValue} />
 
     </div>
   );
