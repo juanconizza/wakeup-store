@@ -1,8 +1,53 @@
-# React + Vite
+# Proyecto Final React js para Coder House
+A continuación se detalla el proyecto realizado para la materia de React js realizada desde Noviembre 2023 a Febrero 2024 en la institución Coder House de forma virtual.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## E-commere de Remeras y Gorras
 
-Currently, two official plugins are available:
+Se presenta un modelo de web de tipo e-commerce con una pantalla de inicio principal donde se muestran de forma aleatoria mutiples productos de la firma. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Metodologías Aplicadas
+
+A continuación se explica los distintos métodos aplicados en la cursada al proyecto final: 
+
+- **Componentes**: Se utilizacion multilpes componentes para poder hacer el proyecto escalable y así justificar la utilización de la tecnología y las ventajas que ofrece React js. 
+
+- **Promesas, Asincronía y Mapping**: Se utilizaron llamadas a base de datos de Firebase con promesas asincronicas y maping para mostrar los diferentrs productos y categorías. También se guardan los pedidos realizados dentro de otra colección llamada "Pedidos" en la misma base de Firebase y se devuelve un Id con al comprador con el número de pedido. 
+
+- **Hooks**: Se utilizaron hooks de useState, useEffect, useParams, useContext, useForm para poder rendedrizar los componentes correctamente según la logica necesaria que se requería. 
+
+- **Routing y Navegación**: Se utilizó la dependencia react-router-dom para poder dar las rutas correspondientes a las diferentes vistas de la web. 
+
+## Dependencias  Utilizadas 
+
+A continuación detallamos las dependencias utilizadas. Se destaca la utilización de `react-bootstrap` y `react-spring` para dar estilo y animaciones a la interfase. Además de `firebase` como la base de datos. 
+
+Las dependencia utilizadas son:
+
+
+    "firebase": "^10.7.2",
+    "react-bootstrap": "^2.9.1",
+    "react-hook-form": "^7.49.3",
+    "react-icons": "^4.12.0",
+    "react-spring": "^9.7.3",
+    "react-transition-group": "^4.4.5"
+
+
+## Autor y Redes de Contacto
+
+Mi nombre es *Juan Manuel Cámara*  soy una persona sumamente emprendedora y vendedora. Siempre en busca de proyectos nuevos para desarrollar comercialmente en la región. Tengo un canal de Youtube de Tecnología.
+
+Mis aptitudes principales son el Telemarketing y la venta por internet. Aunque también la venta tradicional y consultiva. También soy programador Front-End con conocimientos de HTML, CSS, Javascript, y React js. 
+
+[![Logo de LinkedIn](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/30px-LinkedIn_logo_initials.png)](https://www.linkedin.com/in/juanmanuelcamara/)
+
+LinkedIn: [Juan Manuel Cámara](https://www.linkedin.com/in/juanmanuelcamara/)
+
+[![Logo de GitHub](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/30px-Octicons-mark-github.svg.png)](https://github.com/juanconizza/)
+
+GitHub: [Juan Manuel Cámara](https://github.com/juanconizza/)
+
+<a href="https://api.whatsapp.com/send?phone=+5493515921209&text=Hola!,%20vi%20tu%20p%C3%A1gina%20web%20hecha%20en%20React%20js%20y%20me%20interesa%20ponerme%20en%20contacto..."><img src="https://static.vecteezy.com/system/resources/previews/018/930/748/non_2x/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="Logo de WhatsApp" width="50"></a>
+
+WhatsApp: [Juan Manuel Cámara](https://api.whatsapp.com/send?phone=+5493515921209&text=Hola!,%20vi%20tu%20p%C3%A1gina%20web%20hecha%20en%20React%20js%20y%20me%20interesa%20ponerme%20en%20contacto...)
+
+
