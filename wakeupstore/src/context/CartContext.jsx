@@ -3,6 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
+  
   const [carrito, setCarrito] = useState([]);
 
   // Cargar el carrito desde el localStorage al montar el componente

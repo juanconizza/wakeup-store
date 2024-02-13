@@ -71,6 +71,18 @@ position: absolute;
     padding: 10px;
     z-index: 1000;
   }
+
+  .notificationLogout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #ce1c1c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+  }
   
   td {
     vertical-align: middle;

@@ -18,15 +18,15 @@ export const ItemDetailContainer = () => {
     const fetchProducto = async () => {
       try {
         setIsLoading(true);
-        const docRef = doc(db, 'productos', productId);
+        const docRef = doc(db, "productos", productId);
         const resp = await getDoc(docRef);
         if (resp.exists()) {
           setProductoDetalle({ id: resp.id, ...resp.data() });
         } else {
-          console.log('El producto no existe');
+          console.log("El producto no existe");
         }
       } catch (error) {
-        console.error('Error al obtener el producto:', error);
+        console.error("Error al obtener el producto:", error);
       } finally {
         setIsLoading(false);
       }

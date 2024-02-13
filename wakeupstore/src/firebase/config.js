@@ -1,9 +1,10 @@
-// Import the functions you need from the SDKs you need
-
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
-// Your web app's Firebase configuration
+
+
+// Configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBDAZkDPK-bUjK9iH3UCQ15wjxYmGnfJgM",
   authDomain: "wakeup-store.firebaseapp.com",
@@ -13,7 +14,27 @@ const firebaseConfig = {
   appId: "1:58352480192:web:7ad3fc874be9bb47eaa225"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-export  const db = getFirestore(app); 
+// Inicializa Firebase
+
+export const appfire = initializeApp(firebaseConfig);
+
+// Base de Datos de Firebase
+export const db = getFirestore(appfire);
+
+// Servicio de Autorizacion de Firebase
+export const auth = getAuth(appfire);
+
+export const crearUser = createUserWithEmailAndPassword;
+
+export const userLogin = signInWithEmailAndPassword;
+
+
+
+
+
+
+
+
+
+
 

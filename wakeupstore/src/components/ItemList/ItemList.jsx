@@ -24,11 +24,11 @@ export const ItemList = () => {
       setIsLoading(true);
 
       try {
-        const productosCopy = collection(db, 'productos');
+        const productosCopy = collection(db, "productos");
 
         // Utilizamos query y where para filtrar por categoría si está presente y solo traer de la base lo seleccionado.
         const q = category
-          ? query(productosCopy, where('categoria', '==', category))
+          ? query(productosCopy, where("categoria", "==", category))
           : productosCopy;
 
         const resp = await getDocs(q);
@@ -40,7 +40,7 @@ export const ItemList = () => {
 
         setProductosState(selectedProducts);
       } catch (error) {
-        console.error('Error al recuperar datos de Firebase', error);
+        console.error("Error al recuperar datos de Firebase", error);
       } finally {
         setIsLoading(false);
       }
