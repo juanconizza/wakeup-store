@@ -79,8 +79,7 @@ export const NavBar = ({ carrito }) => {
       </Container>
       {showNotification && (
         <div className="notificationLogout">
-          ¡Sesión Cerrada! Nos vemos pronto...{" "}
-          <span style={{ fontSize: "30px" }}>&#128075;</span>
+          ¡Sesión Cerrada! Nos vemos pronto...&#128075;
         </div>
       )}
     </Navbar>
