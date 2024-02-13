@@ -13,9 +13,13 @@ A continuación se explica los distintos métodos aplicados en la cursada al pro
 
 - **Promesas, Asincronía y Mapping**: Se utilizaron llamadas a base de datos de Firebase con promesas asincronicas y maping para mostrar los diferentrs productos y categorías. También se guardan los pedidos realizados dentro de otra colección llamada "Pedidos" en la misma base de Firebase y se devuelve un Id con al comprador con el número de pedido. 
 
-- **Hooks**: Se utilizaron hooks de useState, useEffect, useParams, useContext, useForm para poder rendedrizar los componentes correctamente según la logica necesaria que se requería. 
+- **Hooks**: Se utilizaron hooks de useState, useEffect, useParams, useContext, useForm, useNavigate para poder rendedrizar los componentes correctamente según la logica necesaria que se requería. 
 
 - **Routing y Navegación**: Se utilizó la dependencia react-router-dom para poder dar las rutas correspondientes a las diferentes vistas de la web. 
+
+- **Login y Panel de Usuario**: Se implementó un registro, login, logout y un pequeño panel de usuario donde se verifica la información del usuario logueado y se trae la base de datos del mismo para mostrar el nombre. Esto luego puede aplicarse para traer los pedidos, wishlist, etc relacionado con cada cliente en su propio panel. 
+
+- **Formulario de Contacto**: Se creo un formulario simple de contacto que conecta con la base de datos de firebase para almacenar los mensajes y la información. 
 
 ## Dependencias  Utilizadas 
 
